@@ -13,10 +13,10 @@ def hello_world():  # put application's code here
 def greet(name=""):
     return f"Hello {name}"
 
-
 @app.route('/f')
-def f(fahrenheit: float):
-    celsius = 5/9*(float(fahrenheit)-32)
+@app.route('/f/<fahrenheit>')
+def f(fahrenheit=10):
+    celsius = 5 / 9 * (float(fahrenheit) - 32)
     return f"{fahrenheit} is {celsius}"
 
 
